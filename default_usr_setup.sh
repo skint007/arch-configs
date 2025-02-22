@@ -4,7 +4,7 @@ set -e # Exit on error
 # Install yay, if not installed
 echo -e "\e[34mInfo:\e[0m Installing yay..."
 [ -x "$(command -v yay)" ] || (
-    sudo pacman -S --needed git base-devel &&
+    sudo pacman -S --noconfirm --needed git base-devel &&
     git clone https://aur.archlinux.org/yay-bin.git &&
     cd yay-bin &&
     makepkg -si &&
@@ -14,11 +14,11 @@ echo -e "\e[34mInfo:\e[0m Installing yay..."
 
 # Install hooks
 echo -e "\e[34mInfo:\e[0m Installing hooks..."
-yay -S --needed --noconfirm paccache-hook
+yay -S --noconfirm --needed paccache-hook
 
 # Install oh-my-posh
 echo -e "\e[34mInfo:\e[0m Installing oh-my-posh..."
-yay -S --needed --noconfirm oh-my-posh-bin
+yay -S --noconfirm --needed oh-my-posh-bin
 
 # Setup oh-my-posh
 echo -e "\e[34mInfo:\e[0m Setting up oh-my-posh..."
