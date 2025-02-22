@@ -3,7 +3,14 @@ set -e # Exit on error
 
 # Install yay, if not installed
 echo -e "\e[34mInfo:\e[0m Installing yay..."
-[ -x "$(command -v yay)" ] || sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si && cd .. && rm -rf yay-bin
+[ -x "$(command -v yay)" ] || (
+    sudo pacman -S --needed git base-devel &&
+    git clone https://aur.archlinux.org/yay-bin.git &&
+    cd yay-bin &&
+    makepkg -si &&
+    cd .. &&
+    rm -rf yay-bin
+)
 
 # Install hooks
 echo -e "\e[34mInfo:\e[0m Installing hooks..."
