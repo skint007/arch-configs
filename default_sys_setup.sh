@@ -12,7 +12,7 @@ sed -i -E 's/#ParallelDownloads = [0-9]+/ParallelDownloads = 10/' /etc/pacman.co
 # Update package database and install basic tools
 echo -e "\e[34mInfo:\e[0m Update package database and install basic tools"
 pacman -Sy
-pacman --noconfirm --needed -S which sudo git nano bashtop less jq yq kitty perl docker docker-compose docker-buildx
+pacman --noconfirm --needed -S which sudo git nano bashtop less jq yq kitty perl docker docker-compose docker-buildx tailscale
 
 # Setup users
 echo -e "\e[34mInfo:\e[0m Setup users"
