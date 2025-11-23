@@ -8,7 +8,6 @@ if ! grep -q "^ILoveCandy" /etc/pacman.conf; then
     sed -i 's/^Color/Color\nILoveCandy/' /etc/pacman.conf
 fi
 sed -i -E 's/#ParallelDownloads = [0-9]+/ParallelDownloads = 10/' /etc/pacman.conf
-sed -i '/\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
 
 # Update package database and install basic tools
 echo -e "\e[34mInfo:\e[0m Update package database and install basic tools"
